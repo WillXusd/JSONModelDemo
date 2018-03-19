@@ -1,0 +1,32 @@
+<mvc:View controllerName="JSONModelDemo.controller.View1" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:f="sap.ui.layout.form" displayBlock="true" xmlns:smartField="sap.ui.comp.smartfield" xmlns="sap.m">
+	<App>
+		<Page title="{i18n>title}" showFooter="true">
+			<content>
+				<Label text="Name" labelFor="input-a"/>
+				<Input id="input-a" required="true" enabled="{EnabledModel>/enabled}" value="{UserModel>/Name}"/>
+				<Label text="Sex" labelFor="input-b" design="Bold"/>
+				<Input id="input-b" enabled="{EnabledModel>/enabled}" value="{UserModel>/Sex}"/>
+				<Label text="skill" labelFor="input-c"/>
+				<Input id="input-c" enabled="{EnabledModel>/enabled}" value="{UserModel>/skill}"/>
+				<Label text="New Add" labelFor="input-d"/>
+				<Input id="input-d" enabled="{EnabledModel>/enabled}" value="{UserModel>/newCreate/add}"/>
+			</content>
+			<footer>
+				<OverflowToolbar id="otbFooter">
+					<ToolbarSpacer/>
+					<Button icon="sap-icon://add" press="onAdd"/>
+					<Button type="Accept" text="Save" visible="{changeBtn>/isAccept}" press="onSave">
+						<layoutData><OverflowToolbarLayoutData moveToOverflow="false"/></layoutData>
+					</Button>
+					<Button type="Reject" text="Edit" visible="{changeBtn>/isEdite}" press="onEdit">
+						<layoutData><OverflowToolbarLayoutData moveToOverflow="false"/></layoutData>
+					</Button>
+					<Button text="Cancel" visible="{changeBtn>/isCancel}" press="onCancel">
+						<layoutData><OverflowToolbarLayoutData moveToOverflow="false"/></layoutData>
+					</Button>
+				</OverflowToolbar>
+			</footer>
+		</Page>
+	</App>
+</mvc:View>
